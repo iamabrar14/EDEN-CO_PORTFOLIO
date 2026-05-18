@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Eden & Co - Services{% endblock %}
+{% block content %}
+<section class="space-y-6">
+    <h1 class="font-display text-4xl text-emerald-950">Services</h1>
+    <p class="text-lg text-emerald-900/80">
+        Modular services to align with your brand, portfolio, and launch timeline.
+    </p>
+</section>
+
+<section class="mt-10 grid gap-6 md:grid-cols-3">
+    {% include "includes/service_card.html" with title="Brand Strategy" description="Positioning, messaging, and narrative foundations." price="$2,800" %}
+    {% include "includes/service_card.html" with title="Visual Identity" description="Logos, typography systems, and art direction." price="$4,500" %}
+    {% include "includes/service_card.html" with title="Portfolio Build" description="Custom Django + Tailwind portfolio experience." price="$6,200" %}
+</section>
+
+<section class="mt-16 rounded-3xl border border-emerald-100 bg-white/80 p-8 shadow-lg">
+    <h2 class="font-display text-2xl text-emerald-950">Need a tailored scope?</h2>
+    <p class="mt-3 text-emerald-900/80">
+        We can bundle services and adjust timelines based on your launch goals.
+    </p>
+    <a class="btn-primary mt-6 inline-flex" href="{% url 'contact' %}">Request a quote</a>
+</section>
+{% endblock %}

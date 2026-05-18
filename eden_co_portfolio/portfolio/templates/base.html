@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Eden & Co builds refined digital experiences for bold companies." />
+    <meta name="keywords" content="Eden & Co, portfolio, web design, brand, creative studio" />
+    <title>{% block title %}Eden & Co{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body class="bg-eden-cream text-eden-ink">
+    <div class="eden-background"></div>
+    {% include "includes/navbar.html" %}
+
+    <main class="mx-auto w-full max-w-6xl px-6 pb-20 pt-10">
+        {% block content %}{% endblock %}
+    </main>
+
+    {% include "includes/footer.html" %}
+</body>
+</html>

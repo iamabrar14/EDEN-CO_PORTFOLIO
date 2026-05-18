@@ -1,0 +1,59 @@
+:root {
+    --eden-cream: #f4f1ea;
+    --eden-ink: #173127;
+    --eden-accent: #1f7a5c;
+    --eden-soft: #e8efe6;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    background-color: var(--eden-cream);
+    color: var(--eden-ink);
+}
+
+.font-display {
+    font-family: "Playfair Display", serif;
+}
+
+.eden-background {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(31, 122, 92, 0.12), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(23, 49, 39, 0.12), transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--eden-accent);
+    color: #fefdf9;
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(31, 122, 92, 0.25);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    border: 1px solid var(--eden-accent);
+    color: var(--eden-accent);
+    padding: 0.75rem 1.75rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--eden-accent);
+    color: #fefdf9;
+}

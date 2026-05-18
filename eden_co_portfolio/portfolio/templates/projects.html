@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Eden & Co - Projects{% endblock %}
+{% block content %}
+<section class="space-y-6">
+    <h1 class="font-display text-4xl text-emerald-950">Portfolio highlights</h1>
+    <p class="text-lg text-emerald-900/80">
+        A curated collection of brand stories, digital experiences, and portfolio systems.
+    </p>
+</section>
+
+<section class="mt-10 flex flex-wrap gap-3">
+    <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm text-emerald-700">All</span>
+    <span class="rounded-full border border-emerald-200 px-4 py-2 text-sm text-emerald-700">Brand</span>
+    <span class="rounded-full border border-emerald-200 px-4 py-2 text-sm text-emerald-700">Web</span>
+    <span class="rounded-full border border-emerald-200 px-4 py-2 text-sm text-emerald-700">Editorial</span>
+</section>
+
+<section class="mt-10 grid gap-6 md:grid-cols-3">
+    {% include "includes/project_card.html" with title="Solstice Studio" category="Brand + Web" description="A luminous identity and editorial portfolio." %}
+    {% include "includes/project_card.html" with title="Field Notes" category="Editorial" description="Story-driven layouts for a creative collective." %}
+    {% include "includes/project_card.html" with title="Arcadia Labs" category="Digital" description="A sleek, high-contrast product showcase." %}
+    {% include "includes/project_card.html" with title="Everline" category="Brand" description="Luxury brand system for a wellness line." %}
+    {% include "includes/project_card.html" with title="North Loft" category="Web" description="Calm, gallery-inspired portfolio redesign." %}
+    {% include "includes/project_card.html" with title="Bloomline" category="Editorial" description="Warm storytelling for an artisan studio." %}
+</section>
+{% endblock %}
