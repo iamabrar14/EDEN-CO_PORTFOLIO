@@ -1,26 +1,125 @@
 {% extends "base.html" %}
-{% block title %}Eden & Co - Projects{% endblock %}
+{% load static %}
+{% block title %}Studio Archetype — Projects{% endblock %}
+{% block meta_description %}A curated archive of structural and digital works by Studio Archetype.{% endblock %}
+
 {% block content %}
-<section class="space-y-6">
-    <h1 class="font-display text-4xl text-emerald-950">Portfolio highlights</h1>
-    <p class="text-lg text-emerald-900/80">
-        A curated collection of brand stories, digital experiences, and portfolio systems.
-    </p>
+<!-- Hero -->
+<section class="pt-32 md:pt-44 pb-16 md:pb-24" id="projects-hero">
+    <div class="container-arch">
+        <h1 class="font-display text-5xl md:text-7xl lg:text-[72px] font-bold text-crisp leading-[1.1] tracking-tight-display uppercase max-w-4xl fade-in">
+            SELECTED<br>WORKS.
+        </h1>
+        <p class="mt-8 font-body text-base md:text-lg text-on-surface-variant leading-relaxed max-w-xl fade-in fade-in-delay-2">
+            A curated archive of structural and digital projects. Each engagement reflects our commitment to permanence, precision, and cross-disciplinary craft.
+        </p>
+    </div>
 </section>
 
-<section class="mt-10 flex flex-wrap gap-3">
-    <span class="rounded-full bg-emerald-100 px-4 py-2 text-sm text-emerald-700">All</span>
-    <span class="rounded-full border border-emerald-200 px-4 py-2 text-sm text-emerald-700">Brand</span>
-    <span class="rounded-full border border-emerald-200 px-4 py-2 text-sm text-emerald-700">Web</span>
-    <span class="rounded-full border border-emerald-200 px-4 py-2 text-sm text-emerald-700">Editorial</span>
+<!-- Filter Bar -->
+<section class="pb-12" id="projects-filter">
+    <div class="container-arch">
+        <div class="flex flex-wrap gap-3">
+            <button class="btn-ghost text-xs px-5 py-2 bg-crisp/10 border-crisp/30 text-crisp">ALL</button>
+            <button class="btn-ghost text-xs px-5 py-2">INTERIOR</button>
+            <button class="btn-ghost text-xs px-5 py-2">DIGITAL</button>
+            <button class="btn-ghost text-xs px-5 py-2">SOFTWARE</button>
+            <button class="btn-ghost text-xs px-5 py-2">STRATEGY</button>
+        </div>
+    </div>
 </section>
 
-<section class="mt-10 grid gap-6 md:grid-cols-3">
-    {% include "includes/project_card.html" with title="Solstice Studio" category="Brand + Web" description="A luminous identity and editorial portfolio." %}
-    {% include "includes/project_card.html" with title="Field Notes" category="Editorial" description="Story-driven layouts for a creative collective." %}
-    {% include "includes/project_card.html" with title="Arcadia Labs" category="Digital" description="A sleek, high-contrast product showcase." %}
-    {% include "includes/project_card.html" with title="Everline" category="Brand" description="Luxury brand system for a wellness line." %}
-    {% include "includes/project_card.html" with title="North Loft" category="Web" description="Calm, gallery-inspired portfolio redesign." %}
-    {% include "includes/project_card.html" with title="Bloomline" category="Editorial" description="Warm storytelling for an artisan studio." %}
+<!-- Project Grid -->
+<section class="pb-20 md:pb-40" id="projects-grid">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Project 1 -->
+            <div class="project-card aspect-[4/3] fade-in">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" alt="Meridian Tower" class="w-full h-full object-cover" loading="lazy" />
+                <div class="overlay">
+                    <div>
+                        <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">01 // INTERIOR</p>
+                        <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp italic">Meridian Tower</h3>
+                        <p class="mt-2 font-body text-sm text-on-surface-variant">Commercial lobby and executive floor redesign</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card aspect-[4/3] fade-in fade-in-delay-1">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80" alt="Nexus Platform" class="w-full h-full object-cover" loading="lazy" />
+                <div class="overlay">
+                    <div>
+                        <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">02 // SOFTWARE</p>
+                        <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp italic">Nexus Platform</h3>
+                        <p class="mt-2 font-body text-sm text-on-surface-variant">Enterprise resource management system</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card aspect-[4/3] fade-in">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="Vault Residences" class="w-full h-full object-cover" loading="lazy" />
+                <div class="overlay">
+                    <div>
+                        <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">03 // INTERIOR</p>
+                        <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp italic">Vault Residences</h3>
+                        <p class="mt-2 font-body text-sm text-on-surface-variant">Luxury penthouse spatial optimization</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card aspect-[4/3] fade-in fade-in-delay-1">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Prism Analytics" class="w-full h-full object-cover" loading="lazy" />
+                <div class="overlay">
+                    <div>
+                        <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">04 // DIGITAL</p>
+                        <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp italic">Prism Analytics</h3>
+                        <p class="mt-2 font-body text-sm text-on-surface-variant">Data visualization dashboard for fintech</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card aspect-[4/3] fade-in">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Atlas Group" class="w-full h-full object-cover" loading="lazy" />
+                <div class="overlay">
+                    <div>
+                        <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">05 // STRATEGY</p>
+                        <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp italic">Atlas Group</h3>
+                        <p class="mt-2 font-body text-sm text-on-surface-variant">Global brand repositioning & market entry</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card aspect-[4/3] fade-in fade-in-delay-1">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80" alt="Monolith Studio" class="w-full h-full object-cover" loading="lazy" />
+                <div class="overlay">
+                    <div>
+                        <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">06 // INTERIOR</p>
+                        <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp italic">Monolith Studio</h3>
+                        <p class="mt-2 font-body text-sm text-on-surface-variant">Creative agency headquarters redesign</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="pb-20 md:pb-40" id="projects-cta">
+    <div class="container-arch">
+        <div class="cta-banner">
+            <div>
+                <p class="font-mono text-xs tracking-label uppercase text-cobalt mb-3">COLLABORATION</p>
+                <h2 class="font-display text-2xl md:text-3xl font-semibold text-crisp leading-[1.2] italic">
+                    Have a project in mind?<br>Let's build something permanent.
+                </h2>
+            </div>
+            <a href="{% url 'contact' %}" class="btn-ghost shrink-0">START A PROJECT</a>
+        </div>
+    </div>
 </section>
 {% endblock %}

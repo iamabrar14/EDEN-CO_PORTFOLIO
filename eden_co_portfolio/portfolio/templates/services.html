@@ -1,24 +1,131 @@
 {% extends "base.html" %}
-{% block title %}Eden & Co - Services{% endblock %}
+{% load static %}
+{% block title %}Studio Archetype — Services{% endblock %}
+{% block meta_description %}Our disciplines span interior architecture, web services, management software, and business strategy.{% endblock %}
+
 {% block content %}
-<section class="space-y-6">
-    <h1 class="font-display text-4xl text-emerald-950">Services</h1>
-    <p class="text-lg text-emerald-900/80">
-        Modular services to align with your brand, portfolio, and launch timeline.
-    </p>
+<!-- Hero -->
+<section class="pt-32 md:pt-44 pb-16 md:pb-24" id="services-hero">
+    <div class="container-arch">
+        <h1 class="font-display text-5xl md:text-7xl lg:text-[72px] font-bold text-crisp leading-[1.1] tracking-tight-display uppercase max-w-4xl fade-in">
+            OUR<br>DISCIPLINES.
+        </h1>
+        <p class="mt-8 font-body text-base md:text-lg text-on-surface-variant leading-relaxed max-w-xl fade-in fade-in-delay-2">
+            Modular service offerings designed for enterprises that demand permanence. Each discipline operates independently or converges into unified, cross-functional engagements.
+        </p>
+    </div>
 </section>
 
-<section class="mt-10 grid gap-6 md:grid-cols-3">
-    {% include "includes/service_card.html" with title="Brand Strategy" description="Positioning, messaging, and narrative foundations." price="$2,800" %}
-    {% include "includes/service_card.html" with title="Visual Identity" description="Logos, typography systems, and art direction." price="$4,500" %}
-    {% include "includes/service_card.html" with title="Portfolio Build" description="Custom Django + Tailwind portfolio experience." price="$6,200" %}
+<div class="divider"></div>
+
+<!-- Service Cards -->
+<section class="py-20 md:py-40" id="services-list">
+    <div class="container-arch space-y-0">
+        <!-- Interior Architecture -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 py-12 border-b border-ghost group cursor-pointer hover:bg-surface-container/30 transition-colors px-4 -mx-4">
+            <div class="lg:col-span-1">
+                <span class="font-mono text-sm text-outline">01</span>
+            </div>
+            <div class="lg:col-span-4">
+                <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp group-hover:text-cobalt transition-colors">Interior Architecture</h3>
+            </div>
+            <div class="lg:col-span-5">
+                <p class="font-body text-base text-on-surface-variant leading-relaxed">
+                    Spatial planning, material sourcing, light manipulation, and structural optimization for commercial and residential environments.
+                </p>
+            </div>
+            <div class="lg:col-span-2 flex items-center justify-end">
+                <span class="font-mono text-xs tracking-label uppercase text-on-surface-variant group-hover:text-cobalt transition-colors">EXPLORE &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Web Services -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 py-12 border-b border-ghost group cursor-pointer hover:bg-surface-container/30 transition-colors px-4 -mx-4">
+            <div class="lg:col-span-1">
+                <span class="font-mono text-sm text-outline">02</span>
+            </div>
+            <div class="lg:col-span-4">
+                <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp group-hover:text-cobalt transition-colors">Web Services</h3>
+            </div>
+            <div class="lg:col-span-5">
+                <p class="font-body text-base text-on-surface-variant leading-relaxed">
+                    Immersive frontend development, interaction design, e-commerce architecture, and robust technical foundations for digital presence.
+                </p>
+            </div>
+            <div class="lg:col-span-2 flex items-center justify-end">
+                <span class="font-mono text-xs tracking-label uppercase text-on-surface-variant group-hover:text-cobalt transition-colors">EXPLORE &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Management Software -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 py-12 border-b border-ghost group cursor-pointer hover:bg-surface-container/30 transition-colors px-4 -mx-4">
+            <div class="lg:col-span-1">
+                <span class="font-mono text-sm text-outline">03</span>
+            </div>
+            <div class="lg:col-span-4">
+                <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp group-hover:text-cobalt transition-colors">Management Software</h3>
+            </div>
+            <div class="lg:col-span-5">
+                <p class="font-body text-base text-on-surface-variant leading-relaxed">
+                    Data architecture, custom ERP systems, API integration, and bespoke dashboards that simplify complex operational workflows.
+                </p>
+            </div>
+            <div class="lg:col-span-2 flex items-center justify-end">
+                <span class="font-mono text-xs tracking-label uppercase text-on-surface-variant group-hover:text-cobalt transition-colors">EXPLORE &rarr;</span>
+            </div>
+        </div>
+
+        <!-- Business Strategy -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 py-12 border-b border-ghost group cursor-pointer hover:bg-surface-container/30 transition-colors px-4 -mx-4">
+            <div class="lg:col-span-1">
+                <span class="font-mono text-sm text-outline">04</span>
+            </div>
+            <div class="lg:col-span-4">
+                <h3 class="font-display text-2xl md:text-3xl font-semibold text-crisp group-hover:text-cobalt transition-colors">Business Strategy</h3>
+            </div>
+            <div class="lg:col-span-5">
+                <p class="font-body text-base text-on-surface-variant leading-relaxed">
+                    Brand positioning, market analysis, operational scaling, and high-stakes consulting that aligns creative decisions with unshakeable logic.
+                </p>
+            </div>
+            <div class="lg:col-span-2 flex items-center justify-end">
+                <span class="font-mono text-xs tracking-label uppercase text-on-surface-variant group-hover:text-cobalt transition-colors">EXPLORE &rarr;</span>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="mt-16 rounded-3xl border border-emerald-100 bg-white/80 p-8 shadow-lg">
-    <h2 class="font-display text-2xl text-emerald-950">Need a tailored scope?</h2>
-    <p class="mt-3 text-emerald-900/80">
-        We can bundle services and adjust timelines based on your launch goals.
-    </p>
-    <a class="btn-primary mt-6 inline-flex" href="{% url 'contact' %}">Request a quote</a>
+<!-- Engagement Model -->
+<section class="py-20 md:py-40 border-t border-ghost" id="services-engagement">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <p class="section-label fade-in"><span class="number">05</span><span class="separator">//</span>PROCESS</p>
+                <h2 class="mt-4 font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] italic fade-in fade-in-delay-1">Engagement Model</h2>
+                <p class="mt-6 font-body text-base text-on-surface-variant leading-relaxed fade-in fade-in-delay-2">
+                    Every engagement begins with a structured discovery phase. We map your operational landscape, identify leverage points, and architect a solution that scales with your ambition.
+                </p>
+            </div>
+            <div class="space-y-0">
+                <div class="service-item fade-in fade-in-delay-1"><span class="dot"></span>Discovery & Audit</div>
+                <div class="service-item fade-in fade-in-delay-2"><span class="dot"></span>Strategic Framework</div>
+                <div class="service-item fade-in fade-in-delay-3"><span class="dot"></span>Design & Architecture</div>
+                <div class="service-item fade-in fade-in-delay-4"><span class="dot"></span>Execution & Delivery</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="pb-20 md:pb-40" id="services-cta">
+    <div class="container-arch text-center">
+        <h2 class="font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] italic">Initiate a Project</h2>
+        <p class="mt-6 font-body text-base text-on-surface-variant max-w-lg mx-auto">
+            Engage with our multidisciplinary team to architect your next venture, physical or digital.
+        </p>
+        <div class="mt-10">
+            <a href="{% url 'contact' %}" class="btn-primary">CONTACT STUDIO</a>
+        </div>
+    </div>
 </section>
 {% endblock %}

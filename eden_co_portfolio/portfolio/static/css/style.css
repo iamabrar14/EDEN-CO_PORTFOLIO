@@ -1,59 +1,424 @@
+/* ============================================
+   STUDIO ARCHETYPE — Architectural Minimalist
+   Design System Stylesheet
+   ============================================ */
+
+/* --- CSS Custom Properties --- */
 :root {
-    --eden-cream: #f4f1ea;
-    --eden-ink: #173127;
-    --eden-accent: #1f7a5c;
-    --eden-soft: #e8efe6;
+    --surface: #111415;
+    --surface-deep: #0A0C10;
+    --surface-container: #1d2021;
+    --surface-container-high: #282a2b;
+    --surface-bright: #373a3b;
+    --on-surface: #E1E3E4;
+    --on-surface-variant: #c6c6cb;
+    --outline: #909095;
+    --outline-variant: #45474b;
+    --ghost-border: rgba(255, 255, 255, 0.1);
+    --ghost-border-hover: rgba(255, 255, 255, 0.25);
+    --cobalt: #2E5BFF;
+    --cobalt-dark: #1a3fcc;
+    --gold: #C5A059;
+    --gold-dim: #967533;
+    --crisp-white: #F8F9FA;
+    --font-display: 'Bodoni Moda', serif;
+    --font-body: 'Hanken Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* --- Global Reset Enhancements --- */
+* {
+    border-radius: 0 !important;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: "Space Grotesk", sans-serif;
-    background-color: var(--eden-cream);
-    color: var(--eden-ink);
+    font-family: var(--font-body);
+    background-color: var(--surface-deep);
+    color: var(--on-surface);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+    background-color: var(--cobalt);
+    color: var(--crisp-white);
+}
+
+/* --- Typography --- */
 .font-display {
-    font-family: "Playfair Display", serif;
+    font-family: var(--font-display);
 }
 
-.eden-background {
-    position: fixed;
-    inset: 0;
-    background: radial-gradient(circle at top left, rgba(31, 122, 92, 0.12), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(23, 49, 39, 0.12), transparent 50%);
-    pointer-events: none;
-    z-index: -1;
+.font-mono {
+    font-family: var(--font-mono);
 }
 
+.text-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* --- Buttons --- */
 .btn-primary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 9999px;
-    background: var(--eden-accent);
-    color: #fefdf9;
-    padding: 0.75rem 1.75rem;
-    font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: var(--cobalt);
+    color: var(--crisp-white);
+    padding: 0.875rem 2rem;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--cobalt);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(31, 122, 92, 0.25);
+    background-color: var(--cobalt-dark);
+    border-color: var(--gold);
+    transform: translateY(-1px);
 }
 
-.btn-outline {
+.btn-ghost {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 9999px;
-    border: 1px solid var(--eden-accent);
-    color: var(--eden-accent);
-    padding: 0.75rem 1.75rem;
-    font-weight: 600;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    background-color: transparent;
+    color: var(--crisp-white);
+    padding: 0.875rem 2rem;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--crisp-white);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.btn-outline:hover {
-    background-color: var(--eden-accent);
-    color: #fefdf9;
+.btn-ghost:hover {
+    border-color: var(--cobalt);
+    color: var(--cobalt);
+}
+
+/* --- Ghost Borders --- */
+.ghost-border {
+    border: 1px solid var(--ghost-border);
+}
+
+.ghost-border-hover:hover {
+    border-color: var(--cobalt);
+}
+
+/* --- Glassmorphic Surfaces --- */
+.glass {
+    background: rgba(17, 20, 21, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--ghost-border);
+}
+
+.glass-card {
+    background: rgba(29, 32, 33, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--ghost-border);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.glass-card:hover {
+    border-color: var(--cobalt);
+    transform: scale(1.02);
+}
+
+/* --- Scroll Indicator --- */
+.scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+}
+
+.scroll-indicator::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 40px;
+    background: var(--on-surface-variant);
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+    50% { opacity: 1; transform: scaleY(1); }
+}
+
+/* --- Divider Line --- */
+.divider {
+    width: 100%;
+    height: 1px;
+    background: var(--ghost-border);
+}
+
+/* --- Section Number Labels --- */
+.section-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+}
+
+.section-label .number {
+    color: var(--outline);
+}
+
+.section-label .separator {
+    margin: 0 8px;
+    color: var(--outline-variant);
+}
+
+/* --- Service List Items --- */
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--ghost-border);
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--on-surface);
+    transition: color 0.3s ease;
+}
+
+.service-item:hover {
+    color: var(--cobalt);
+}
+
+.service-item .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--outline);
+    flex-shrink: 0;
+}
+
+/* --- Form Fields (Dark Theme) --- */
+.form-field {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ghost-border);
+    padding: 12px 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--on-surface);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-field:focus {
+    border-bottom-color: var(--cobalt);
+}
+
+.form-field::placeholder {
+    color: var(--outline);
+}
+
+.form-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface);
+    margin-bottom: 8px;
+    display: block;
+}
+
+select.form-field {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23909095' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    cursor: pointer;
+}
+
+select.form-field option {
+    background: var(--surface-container);
+    color: var(--on-surface);
+}
+
+/* --- Project Card Overlay --- */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-card img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-card .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 12, 16, 0.9) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+}
+
+/* --- Timeline --- */
+.timeline-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--ghost-border);
+}
+
+.timeline-year {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    color: var(--on-surface-variant);
+    min-width: 60px;
+}
+
+/* --- Social Media Card --- */
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    border: 1px solid var(--ghost-border);
+    background: var(--surface-container);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--on-surface);
+}
+
+.social-card:hover {
+    border-color: var(--cobalt);
+    transform: translateY(-2px);
+}
+
+.social-card .icon {
+    width: 32px;
+    height: 32px;
+}
+
+.social-card .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--on-surface-variant);
+}
+
+/* --- Fade In Animation --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.2s; }
+.fade-in-delay-3 { animation-delay: 0.3s; }
+.fade-in-delay-4 { animation-delay: 0.4s; }
+
+/* --- Responsive Container --- */
+.container-arch {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 64px;
+}
+
+@media (max-width: 768px) {
+    .container-arch {
+        padding: 0 24px;
+    }
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+    border: 1px solid var(--ghost-border);
+    padding: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+@media (max-width: 768px) {
+    .cta-banner {
+        flex-direction: column;
+        padding: 40px 24px;
+        text-align: center;
+    }
+}
+
+/* --- Location Card --- */
+.location-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.location-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.location-card .info {
+    padding: 20px;
+    background: var(--surface-container);
+    border: 1px solid var(--ghost-border);
+    border-top: none;
+}
+
+.location-card .arrow {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: var(--crisp-white);
+    font-size: 18px;
 }

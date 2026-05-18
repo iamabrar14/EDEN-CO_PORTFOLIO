@@ -1,45 +1,117 @@
 {% extends "base.html" %}
-{% block title %}Eden & Co - About{% endblock %}
+{% load static %}
+{% block title %}Studio Archetype — About{% endblock %}
+{% block meta_description %}Engineered for permanence. We operate at the intersection of structural integrity and digital fluidity.{% endblock %}
+
 {% block content %}
-<section class="grid gap-10 lg:grid-cols-2">
-    <div class="space-y-6">
-        <h1 class="font-display text-4xl text-emerald-950">Our story</h1>
-        <p class="text-lg text-emerald-900/80">
-            Eden & Co is a creative partner for ambitious teams. We pair thoughtful strategy with design that
-            feels refined, cinematic, and easy to navigate.
+<!-- Hero -->
+<section class="pt-32 md:pt-44 pb-16 md:pb-24" id="about-hero">
+    <div class="container-arch">
+        <h1 class="font-display text-5xl md:text-7xl lg:text-[72px] font-bold text-crisp leading-[1.1] tracking-tight-display uppercase max-w-4xl fade-in">
+            ENGINEERED FOR<br>PERMANENCE.
+        </h1>
+        <p class="mt-8 font-body text-base md:text-lg text-on-surface-variant leading-relaxed max-w-xl fade-in fade-in-delay-2">
+            We operate at the intersection of structural integrity and digital fluidity. Our multi-disciplinary studio crafts enduring architectures, from monumental physical spaces to complex software systems, prioritizing precision above all.
         </p>
-        <p class="text-emerald-900/80">
-            We believe the most powerful portfolios are calm, confident, and clear. Every layout is designed
-            to tell a story, highlight your craft, and invite collaboration.
-        </p>
-    </div>
-    <div class="rounded-3xl border border-emerald-100 bg-white/80 p-8 shadow-xl">
-        <h2 class="font-display text-2xl text-emerald-950">Mission + vision</h2>
-        <ul class="mt-6 space-y-4 text-emerald-900/80">
-            <li><strong>Mission:</strong> build expressive brand experiences that help teams grow.</li>
-            <li><strong>Vision:</strong> become the studio trusted for purposeful, lasting design.</li>
-            <li><strong>Values:</strong> clarity, craft, and collaboration.</li>
-        </ul>
+        <div class="mt-16 scroll-indicator fade-in fade-in-delay-4">SCROLL</div>
     </div>
 </section>
 
-<section class="mt-16">
-    <h2 class="font-display text-2xl text-emerald-950">Meet the team</h2>
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl border border-emerald-100 bg-white/80 p-6 shadow-lg">
-            <p class="text-sm uppercase tracking-[0.2em] text-emerald-600">Strategy</p>
-            <h3 class="mt-3 font-display text-xl text-emerald-950">Avery Cole</h3>
-            <p class="mt-2 text-emerald-900/80">Guides brand positioning and narrative direction.</p>
+<div class="divider"></div>
+
+<!-- Our Philosophy -->
+<section class="py-20 md:py-40" id="about-philosophy">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <div class="lg:col-span-4">
+                <h2 class="font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] italic fade-in">Our Philosophy</h2>
+                <p class="mt-3 section-label fade-in fade-in-delay-1"><span class="number">01</span><span class="separator">/</span>MANIFESTO</p>
+            </div>
+            <div class="lg:col-span-4">
+                <h3 class="font-display text-xl md:text-2xl font-medium text-crisp fade-in fade-in-delay-1">Architectural Minimalism</h3>
+                <p class="mt-4 font-body text-sm md:text-base text-on-surface-variant leading-relaxed fade-in fade-in-delay-2">
+                    We believe in the rigorous elimination of the inessential. Decoration is discarded in favor of structure. Whitespace is deployed not as emptiness, but as a functional medium that provides room to breathe for complex logic and high-stakes strategy.
+                </p>
+            </div>
+            <div class="lg:col-span-4">
+                <h3 class="font-display text-xl md:text-2xl font-medium text-crisp fade-in fade-in-delay-2">Multidisciplinary Craft</h3>
+                <p class="mt-4 font-body text-sm md:text-base text-on-surface-variant leading-relaxed fade-in fade-in-delay-3">
+                    The principles that govern a resilient physical building apply equally to digital architecture. Our teams cross-pollinate, bringing material sensibility to software design, and algorithmic precision to interior space planning.
+                </p>
+            </div>
         </div>
-        <div class="rounded-2xl border border-emerald-100 bg-white/80 p-6 shadow-lg">
-            <p class="text-sm uppercase tracking-[0.2em] text-emerald-600">Design</p>
-            <h3 class="mt-3 font-display text-xl text-emerald-950">Mara Liu</h3>
-            <p class="mt-2 text-emerald-900/80">Leads visual systems, typography, and UI.</p>
+    </div>
+</section>
+
+<!-- Full-bleed Image -->
+<div class="w-full h-72 md:h-[500px] overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80" alt="Dark architectural corridor" class="w-full h-full object-cover" loading="lazy" />
+</div>
+
+<!-- Leadership -->
+<section class="py-20 md:py-40" id="about-leadership">
+    <div class="container-arch">
+        <div class="mb-12 md:mb-16">
+            <h2 class="font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] italic fade-in">Leadership</h2>
+            <p class="mt-3 section-label fade-in fade-in-delay-1"><span class="number">02</span><span class="separator">/</span>THE DIRECTORS</p>
         </div>
-        <div class="rounded-2xl border border-emerald-100 bg-white/80 p-6 shadow-lg">
-            <p class="text-sm uppercase tracking-[0.2em] text-emerald-600">Delivery</p>
-            <h3 class="mt-3 font-display text-xl text-emerald-950">Jonah Reyes</h3>
-            <p class="mt-2 text-emerald-900/80">Owns build quality and launch readiness.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div class="fade-in fade-in-delay-1">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Julian Vance" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+                </div>
+                <h3 class="mt-6 font-display text-xl md:text-2xl font-medium text-crisp italic">Julian Vance</h3>
+                <p class="mt-1 font-mono text-xs tracking-label uppercase text-on-surface-variant">PRINCIPAL ARCHITECT</p>
+            </div>
+            <div class="fade-in fade-in-delay-2">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Elena Rostova" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+                </div>
+                <h3 class="mt-6 font-display text-xl md:text-2xl font-medium text-crisp italic">Elena Rostova</h3>
+                <p class="mt-1 font-mono text-xs tracking-label uppercase text-on-surface-variant">HEAD OF DIGITAL SYSTEMS</p>
+            </div>
+            <div class="fade-in fade-in-delay-3">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80" alt="Marcus Thorne" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+                </div>
+                <h3 class="mt-6 font-display text-xl md:text-2xl font-medium text-crisp italic">Marcus Thorne</h3>
+                <p class="mt-1 font-mono text-xs tracking-label uppercase text-on-surface-variant">DIRECTOR OF STRATEGY</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Milestones -->
+<section class="py-20 md:py-40 border-t border-ghost" id="about-milestones">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <div class="lg:col-span-4">
+                <h2 class="font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] italic fade-in">Milestones</h2>
+                <p class="mt-3 section-label fade-in fade-in-delay-1"><span class="number">03</span><span class="separator">/</span>EVOLUTION</p>
+            </div>
+            <div class="lg:col-span-8">
+                <div class="timeline-item fade-in fade-in-delay-1">
+                    <span class="timeline-year">2014</span>
+                    <div>
+                        <h3 class="font-display text-xl md:text-2xl font-medium text-crisp">Foundation</h3>
+                        <p class="mt-2 font-body text-sm md:text-base text-on-surface-variant leading-relaxed">Established as a pure architectural practice focusing on brutalist commercial interiors and spatial optimization.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in fade-in-delay-2">
+                    <span class="timeline-year">2018</span>
+                    <div>
+                        <h3 class="font-display text-xl md:text-2xl font-medium text-crisp">Digital Integration</h3>
+                        <p class="mt-2 font-body text-sm md:text-base text-on-surface-variant leading-relaxed">Expanded scope to include software architecture, applying physical design principles to complex digital ecosystems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in fade-in-delay-3">
+                    <span class="timeline-year">2023</span>
+                    <div>
+                        <h3 class="font-display text-xl md:text-2xl font-medium text-crisp">Global Strategy</h3>
+                        <p class="mt-2 font-body text-sm md:text-base text-on-surface-variant leading-relaxed">Launched the strategy division, consulting for top-tier enterprises on unified physical and digital brand presence.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,13 +1,59 @@
-<header class="sticky top-0 z-20 border-b border-emerald-100 bg-white/90 backdrop-blur">
-    <div class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <a href="{% url 'landing' %}" class="font-display text-xl text-emerald-950">Eden & Co</a>
-        <nav class="hidden items-center gap-6 text-sm font-semibold text-emerald-800 md:flex">
-            <a href="{% url 'home' %}" class="hover:text-emerald-600">Home</a>
-            <a href="{% url 'about' %}" class="hover:text-emerald-600">About</a>
-            <a href="{% url 'projects' %}" class="hover:text-emerald-600">Projects</a>
-            <a href="{% url 'services' %}" class="hover:text-emerald-600">Services</a>
-            <a href="{% url 'contact' %}" class="hover:text-emerald-600">Contact</a>
-        </nav>
-        <a href="{% url 'contact' %}" class="btn-primary hidden md:inline-flex">Start a project</a>
+{% load static %}
+<!-- Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 glass" id="main-nav">
+    <div class="container-arch">
+        <div class="flex items-center justify-between py-5">
+            <!-- Brand -->
+            <a href="{% url 'landing' %}" class="font-display text-lg md:text-xl font-bold text-crisp tracking-tight-display hover:text-on-surface-variant transition-colors" id="brand-logo">
+                STUDIO ARCHETYPE
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-8" id="desktop-nav">
+                <a href="{% url 'home' %}" class="font-mono text-xs tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Interior</a>
+                <a href="{% url 'projects' %}" class="font-mono text-xs tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Digital</a>
+                <a href="{% url 'services' %}" class="font-mono text-xs tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Software</a>
+                <a href="{% url 'about' %}" class="font-mono text-xs tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Strategy</a>
+                <a href="{% url 'about' %}" class="font-mono text-xs tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">About</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <a href="{% url 'contact' %}" class="hidden lg:inline-flex btn-ghost" id="nav-enquire">
+                ENQUIRE
+            </a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-crisp p-2" id="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <line x1="4" y1="7" x2="20" y2="7" id="menu-line-1"></line>
+                    <line x1="4" y1="17" x2="20" y2="17" id="menu-line-2"></line>
+                </svg>
+            </button>
+        </div>
     </div>
 </header>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-40 bg-surface-deep/95 backdrop-blur-xl hidden flex-col items-center justify-center gap-8" id="mobile-menu">
+    <button class="absolute top-5 right-6 text-crisp p-2" onclick="toggleMobileMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+            <line x1="6" y1="18" x2="18" y2="6"></line>
+        </svg>
+    </button>
+    <a href="{% url 'home' %}" class="font-mono text-sm tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Interior</a>
+    <a href="{% url 'projects' %}" class="font-mono text-sm tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Digital</a>
+    <a href="{% url 'services' %}" class="font-mono text-sm tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Software</a>
+    <a href="{% url 'about' %}" class="font-mono text-sm tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">Strategy</a>
+    <a href="{% url 'about' %}" class="font-mono text-sm tracking-label uppercase text-on-surface-variant hover:text-crisp transition-colors">About</a>
+    <a href="{% url 'contact' %}" class="btn-primary mt-4">ENQUIRE</a>
+</div>
+
+<script>
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+    menu.classList.toggle('flex');
+    document.body.classList.toggle('overflow-hidden');
+}
+</script>

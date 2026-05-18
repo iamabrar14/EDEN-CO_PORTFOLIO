@@ -9,8 +9,8 @@ class ContactForm(forms.ModelForm):
         validators=[RegexValidator(r"^[0-9+()\-\s]*$", "Enter a valid phone number.")],
         widget=forms.TextInput(
             attrs={
-                "class": "w-full rounded-lg border border-emerald-200 px-4 py-3 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-200",
-                "placeholder": "Phone (optional)",
+                "class": "form-field",
+                "placeholder": "Doe",
             }
         ),
     )
@@ -21,27 +21,27 @@ class ContactForm(forms.ModelForm):
         widgets = {
             "name": forms.TextInput(
                 attrs={
-                    "class": "w-full rounded-lg border border-emerald-200 px-4 py-3 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-200",
-                    "placeholder": "Your name",
+                    "class": "form-field",
+                    "placeholder": "John",
                 }
             ),
             "email": forms.EmailInput(
                 attrs={
-                    "class": "w-full rounded-lg border border-emerald-200 px-4 py-3 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-200",
-                    "placeholder": "you@example.com",
+                    "class": "form-field",
+                    "placeholder": "john.doe@example.com",
                 }
             ),
             "subject": forms.TextInput(
                 attrs={
-                    "class": "w-full rounded-lg border border-emerald-200 px-4 py-3 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-200",
-                    "placeholder": "Project inquiry",
+                    "class": "form-field",
+                    "placeholder": "Select a discipline",
                 }
             ),
             "message": forms.Textarea(
                 attrs={
-                    "class": "w-full rounded-lg border border-emerald-200 px-4 py-3 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-200",
-                    "placeholder": "Tell us about your project",
-                    "rows": 6,
+                    "class": "form-field",
+                    "placeholder": "Outline the parameters of your project...",
+                    "rows": 4,
                 }
             ),
         }

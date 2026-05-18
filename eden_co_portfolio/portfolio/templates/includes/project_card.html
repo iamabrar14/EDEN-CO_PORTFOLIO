@@ -1,5 +1,12 @@
-<article class="rounded-2xl border border-emerald-100 bg-white/90 p-6 shadow-lg">
-    <p class="text-xs uppercase tracking-[0.25em] text-emerald-600">{{ category }}</p>
-    <h3 class="mt-3 font-display text-xl text-emerald-950">{{ title }}</h3>
-    <p class="mt-2 text-emerald-900/80">{{ description }}</p>
+<article class="project-card aspect-[4/3]">
+    <div class="w-full h-full bg-surface-container flex items-center justify-center">
+        <span class="font-mono text-xs tracking-label uppercase text-outline">{{ category }}</span>
+    </div>
+    <div class="overlay">
+        <div>
+            <p class="font-mono text-xs tracking-label uppercase text-on-surface-variant mb-2">{{ category }}</p>
+            <h3 class="font-display text-2xl font-semibold text-crisp italic">{{ title }}</h3>
+            <p class="mt-2 font-body text-sm text-on-surface-variant">{{ description }}</p>
+        </div>
+    </div>
 </article>

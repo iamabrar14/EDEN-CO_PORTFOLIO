@@ -1,34 +1,248 @@
 {% extends "base.html" %}
-{% block title %}Eden & Co - Home{% endblock %}
+{% load static %}
+
+{% block title %}Studio Archetype — Multidisciplinary Precision{% endblock %}
+{% block meta_description %}We bridge the physical and digital. From structural interior architecture to complex software engineering, our methodologies are rooted in absolute permanence and rigorous strategy.{% endblock %}
+
 {% block content %}
-<section class="space-y-6">
-    <h1 class="font-display text-4xl text-emerald-950">Welcome to Eden & Co</h1>
-    <p class="text-lg text-emerald-900/80">
-        We partner with founders and creative teams to craft portfolio experiences that feel effortless and premium.
-    </p>
-</section>
-
-<section class="mt-14">
-    <div class="flex items-end justify-between gap-6">
-        <h2 class="font-display text-2xl text-emerald-950">Featured projects</h2>
-        <a class="text-sm font-semibold text-emerald-700" href="{% url 'projects' %}">Explore all</a>
-    </div>
-    <div class="mt-6 grid gap-6 md:grid-cols-3">
-        {% include "includes/project_card.html" with title="Harbor Atelier" category="Brand + Web" description="Minimalist portfolio with a tactile, gallery-inspired layout." %}
-        {% include "includes/project_card.html" with title="Cedar & Stone" category="Identity" description="A refined visual system for a boutique architecture studio." %}
-        {% include "includes/project_card.html" with title="Iris Collective" category="Digital" description="Multimedia storytelling for a creative production team." %}
+<!-- Hero Section -->
+<section class="pt-32 md:pt-44 pb-20 md:pb-32" id="home-hero">
+    <div class="container-arch">
+        <h1 class="font-display text-5xl md:text-7xl lg:text-[72px] font-bold text-crisp leading-[1.1] tracking-tight-display italic fade-in">
+            Multidisciplinary<br>Precision.
+        </h1>
+        <p class="mt-8 font-body text-base md:text-lg text-on-surface-variant leading-relaxed max-w-xl fade-in fade-in-delay-2">
+            We bridge the physical and digital. From structural interior architecture to complex
+            software engineering, our methodologies are rooted in absolute permanence and
+            rigorous strategy.
+        </p>
     </div>
 </section>
 
-<section class="mt-16 rounded-3xl border border-emerald-100 bg-white/80 p-8 shadow-lg">
-    <h2 class="font-display text-2xl text-emerald-950">Client whispers</h2>
-    <div class="mt-6 grid gap-6 md:grid-cols-2">
-        <blockquote class="rounded-2xl bg-emerald-50 p-6 text-emerald-900/80">
-            "Eden & Co shaped our story into a portfolio that feels unmistakably us."
-        </blockquote>
-        <blockquote class="rounded-2xl bg-emerald-50 p-6 text-emerald-900/80">
-            "Every detail felt intentional, from narrative to launch."
-        </blockquote>
+<!-- Divider Image -->
+<div class="w-full h-64 md:h-96 overflow-hidden">
+    <img
+        src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
+        alt="Architectural detail"
+        class="w-full h-full object-cover opacity-60"
+        loading="lazy"
+    />
+</div>
+
+<!-- Service 01: Interior Architecture -->
+<section class="py-section-mobile md:py-section" id="service-interior">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
+            <!-- Text -->
+            <div>
+                <p class="section-label fade-in">
+                    <span class="number">01</span>
+                    <span class="separator">//</span>
+                    STRUCTURAL
+                </p>
+                <h2 class="mt-4 font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] fade-in fade-in-delay-1">
+                    Interior Architecture
+                </h2>
+                <p class="mt-6 font-body text-base text-on-surface-variant leading-relaxed max-w-md fade-in fade-in-delay-2">
+                    We design spaces that command presence. Our architectural
+                    approach strips away the superfluous, focusing on raw
+                    materials, spatial flow, and enduring structural integrity. Every
+                    environment is a deliberate manipulation of light and form.
+                </p>
+                <div class="mt-8 space-y-0">
+                    <div class="service-item fade-in fade-in-delay-2">
+                        <span class="dot"></span>
+                        Spatial Planning & Form
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-3">
+                        <span class="dot"></span>
+                        Material Sourcing
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-4">
+                        <span class="dot"></span>
+                        Light Manipulation
+                    </div>
+                </div>
+            </div>
+            <!-- Image -->
+            <div class="relative">
+                <img
+                    src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+                    alt="Interior architecture — geometric form"
+                    class="w-full aspect-[4/5] object-cover"
+                    loading="lazy"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service 02: Web Services -->
+<section class="py-section-mobile md:py-section" id="service-web">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
+            <!-- Image (left on desktop) -->
+            <div class="order-2 lg:order-1">
+                <img
+                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
+                    alt="Server infrastructure"
+                    class="w-full aspect-[4/5] object-cover"
+                    loading="lazy"
+                />
+            </div>
+            <!-- Text -->
+            <div class="order-1 lg:order-2">
+                <p class="section-label fade-in">
+                    <span class="number">02</span>
+                    <span class="separator">//</span>
+                    FLUID
+                </p>
+                <h2 class="mt-4 font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] fade-in fade-in-delay-1">
+                    Web Services
+                </h2>
+                <p class="mt-6 font-body text-base text-on-surface-variant leading-relaxed max-w-md fade-in fade-in-delay-2">
+                    Digital environments engineered for impact. We construct high-
+                    performance web applications that mirror the precision of our
+                    physical architecture. Expect clean visual UI, seamless
+                    interactions, and robust technical foundations.
+                </p>
+                <div class="mt-8 space-y-0">
+                    <div class="service-item fade-in fade-in-delay-2">
+                        <span class="dot"></span>
+                        Immersive Frontend Dev
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-3">
+                        <span class="dot"></span>
+                        Interaction Design
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-4">
+                        <span class="dot"></span>
+                        E-Commerce Architecture
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Full-bleed Image Break -->
+<div class="w-full h-72 md:h-[480px] overflow-hidden">
+    <img
+        src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80"
+        alt="Dark architectural space"
+        class="w-full h-full object-cover opacity-50"
+        loading="lazy"
+    />
+</div>
+
+<!-- Service 03: Management Software -->
+<section class="py-section-mobile md:py-section" id="service-software">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
+            <!-- Text -->
+            <div>
+                <p class="section-label fade-in">
+                    <span class="number">03</span>
+                    <span class="separator">//</span>
+                    SYSTEMATIC
+                </p>
+                <h2 class="mt-4 font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] fade-in fade-in-delay-1">
+                    Management Software
+                </h2>
+                <p class="mt-6 font-body text-base text-on-surface-variant leading-relaxed max-w-md fade-in fade-in-delay-2">
+                    Complex operations require elegant systems. We architect
+                    bespoke management software that simplifies extensive data
+                    circulation. Built on a philosophy of "less but better," our
+                    dashboards are quiet, confident, and highly functional.
+                </p>
+                <div class="mt-8 space-y-0">
+                    <div class="service-item fade-in fade-in-delay-2">
+                        <span class="dot"></span>
+                        Data Architecture
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-3">
+                        <span class="dot"></span>
+                        Custom ERP Systems
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-4">
+                        <span class="dot"></span>
+                        API Integration
+                    </div>
+                </div>
+            </div>
+            <!-- Image -->
+            <div>
+                <img
+                    src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                    alt="Data systems visualization"
+                    class="w-full aspect-[4/5] object-cover"
+                    loading="lazy"
+                />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Service 04: Business Strategy -->
+<section class="py-section-mobile md:py-section" id="service-strategy">
+    <div class="container-arch">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-start">
+            <!-- Image (left on desktop) -->
+            <div class="order-2 lg:order-1">
+                <img
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+                    alt="Corporate architecture"
+                    class="w-full aspect-[4/5] object-cover"
+                    loading="lazy"
+                />
+            </div>
+            <!-- Text -->
+            <div class="order-1 lg:order-2">
+                <p class="section-label fade-in">
+                    <span class="number">04</span>
+                    <span class="separator">//</span>
+                    INTELLECTUAL
+                </p>
+                <h2 class="mt-4 font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] fade-in fade-in-delay-1">
+                    Business Strategy
+                </h2>
+                <p class="mt-6 font-body text-base text-on-surface-variant leading-relaxed max-w-md fade-in fade-in-delay-2">
+                    Strategy as structure. We provide high-stakes business
+                    consulting that aligns operational models with brand
+                    architecture. Our rigorous analysis ensures that every creative
+                    decision is backed by unshakeable logic.
+                </p>
+                <div class="mt-8 space-y-0">
+                    <div class="service-item fade-in fade-in-delay-2">
+                        <span class="dot"></span>
+                        Brand Positioning
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-3">
+                        <span class="dot"></span>
+                        Market Analysis
+                    </div>
+                    <div class="service-item fade-in fade-in-delay-4">
+                        <span class="dot"></span>
+                        Operational Scaling
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA: Initiate a Project -->
+<section class="py-section-mobile md:py-section" id="home-cta">
+    <div class="container-arch text-center">
+        <h2 class="font-display text-3xl md:text-[40px] font-semibold text-crisp leading-[1.2] italic">
+            Initiate a Project
+        </h2>
+        <p class="mt-6 font-body text-base text-on-surface-variant max-w-lg mx-auto leading-relaxed">
+            Engage with our multidisciplinary team to architect your next venture, physical or digital.
+        </p>
+        <div class="mt-10">
+            <a href="{% url 'contact' %}" class="btn-primary">CONTACT STUDIO</a>
+        </div>
     </div>
 </section>
 {% endblock %}
