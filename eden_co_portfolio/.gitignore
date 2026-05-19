@@ -15,6 +15,10 @@ ENV/
 # Django
 *.sqlite3
 *.log
+staticfiles/
+
+# Env files
+.env
 
 
 # OS and editor
