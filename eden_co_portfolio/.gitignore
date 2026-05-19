@@ -15,8 +15,7 @@ ENV/
 # Django
 *.sqlite3
 *.log
-staticfiles/
-media/
+
 
 # OS and editor
 .DS_Store
