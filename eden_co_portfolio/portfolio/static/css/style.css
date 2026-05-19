@@ -271,6 +271,9 @@ select.form-field option {
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card img {
